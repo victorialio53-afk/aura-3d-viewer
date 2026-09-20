@@ -47,7 +47,7 @@ const MODEL_SIZE = 2.35;
 // Исправление исходного наклона модели.
 // Капсула была наклонена вправо,
 // поэтому здесь компенсируем наклон против часовой стрелки.
-const STRAIGHTEN_ANGLE = THREE.MathUtils.degToRad(13);
+const STRAIGHTEN_ANGLE = THREE.MathUtils.degToRad(14);
 
 // Высота лёгкой левитации.
 const HOVER_HEIGHT = 0.045;
