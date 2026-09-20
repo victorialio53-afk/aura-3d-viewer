@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 
+  <title>AURI / 3D Viewer</title>
+
+  <link rel="stylesheet" href="./style.css" />
+
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+
+<body>
+
+  <main class="app">
+
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AURA.SYSTEM / NODE_01</div>
+        <h1>AURI</h1>
+      </div>
+
+      <div class="status">
+        <span class="status-dot"></span>
+        ONLINE
+      </div>
+    </header>
+
+    <section id="viewer" class="viewer">
+      <div id="loading" class="loading">
+        <div class="loading-line"></div>
+        <span>LOADING 3D MODEL</span>
+      </div>
+
+      <div class="corner corner-tl"></div>
+      <div class="corner corner-tr"></div>
+      <div class="corner corner-bl"></div>
+      <div class="corner corner-br"></div>
+    </section>
+
+    <section class="info">
+      <div>
+        <div class="label">VIRTUAL ASSISTANT</div>
+        <div class="hint">ПОВЕРНИ МОДЕЛЬ</div>
+      </div>
+
+      <button id="resetButton" type="button">
+        RESET VIEW
+      </button>
+    </section>
+
+    <footer>
+      <span>AURA / RUDN / 2026</span>
+      <span>STATUS: ONLINE</span>
+    </footer>
+
+  </main>
+
+  <script type="module" src="./app.js"></script>
+
+</body>
+</html>
