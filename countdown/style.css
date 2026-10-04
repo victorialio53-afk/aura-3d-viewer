@@ -1,1 +1,1325 @@
+:root {
 
+  --bg: #08080c;
+
+  --panel:
+    rgba(16, 16, 23, 0.78);
+
+  --white:
+    #f4f4f6;
+
+  --grey:
+    #8b8b98;
+
+  --dark-grey:
+    #4b4b56;
+
+  --violet:
+    #8a52ff;
+
+  --violet-light:
+    #b48aff;
+
+  --violet-dark:
+    #5121b8;
+
+  --border:
+    rgba(141, 92, 255, 0.32);
+
+}
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+html,
+body {
+
+  margin: 0;
+
+  width: 100%;
+  min-height: 100%;
+
+  background: var(--bg);
+
+  color: var(--white);
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+}
+
+
+
+body {
+
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  overflow-x: hidden;
+
+  padding: 24px;
+
+  position: relative;
+
+}
+
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+
+.grid {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.15;
+
+  background-image:
+
+    linear-gradient(
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    ),
+
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.035) 1px,
+      transparent 1px
+    );
+
+  background-size:
+    48px 48px;
+
+}
+
+
+
+.noise {
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.035;
+
+  background-image:
+
+    repeating-radial-gradient(
+
+      circle at 0 0,
+
+      transparent 0,
+
+      rgba(255,255,255,0.12) 1px,
+
+      transparent 2px
+
+    );
+
+  background-size:
+    5px 5px;
+
+}
+
+
+
+.glow {
+
+  position: fixed;
+
+  width: 600px;
+  height: 600px;
+
+  border-radius: 50%;
+
+  filter:
+    blur(130px);
+
+  opacity: 0.15;
+
+  pointer-events: none;
+
+}
+
+
+
+.glow-one {
+
+  top: -260px;
+  left: -200px;
+
+  background:
+    var(--violet);
+
+}
+
+
+
+.glow-two {
+
+  right: -300px;
+  bottom: -300px;
+
+  background:
+    #5426ff;
+
+}
+
+
+
+/* =========================
+   MAIN INTERFACE
+========================= */
+
+
+.interface {
+
+  width:
+    min(100%, 980px);
+
+  min-height:
+    720px;
+
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content:
+    space-between;
+
+  padding:
+    36px 42px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.018),
+      transparent 35%
+    ),
+
+    var(--panel);
+
+  border:
+    1px solid var(--border);
+
+  backdrop-filter:
+    blur(14px);
+
+  box-shadow:
+
+    0 0 60px
+    rgba(104, 62, 255, 0.08);
+
+  overflow:
+    hidden;
+
+}
+
+
+
+/* =========================
+   TOP
+========================= */
+
+
+.topbar {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  font-family:
+    monospace;
+
+}
+
+
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+}
+
+
+
+.brand-dot {
+
+  width: 9px;
+  height: 9px;
+
+  border-radius:
+    50%;
+
+  background:
+    var(--violet);
+
+  box-shadow:
+
+    0 0 14px
+    var(--violet);
+
+}
+
+
+
+.brand strong {
+
+  display: block;
+
+  letter-spacing:
+    4px;
+
+  font-size:
+    14px;
+
+}
+
+
+
+.brand small {
+
+  display: block;
+
+  margin-top:
+    5px;
+
+  color:
+    var(--grey);
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+
+}
+
+
+
+.system-state {
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    2px;
+
+  color:
+    var(--grey);
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+}
+
+
+
+.online-dot {
+
+  width: 6px;
+  height: 6px;
+
+  border-radius:
+    50%;
+
+  background:
+    #7dff9d;
+
+  box-shadow:
+
+    0 0 10px
+    #7dff9d;
+
+}
+
+
+
+/* =========================
+   HERO
+========================= */
+
+
+.hero {
+
+  width: 100%;
+
+  max-width:
+    760px;
+
+  margin:
+    80px auto 70px;
+
+}
+
+
+
+.eyebrow {
+
+  font-family:
+    monospace;
+
+  color:
+    var(--violet-light);
+
+  letter-spacing:
+    3px;
+
+  font-size:
+    11px;
+
+  margin-bottom:
+    25px;
+
+}
+
+
+
+h1 {
+
+  margin: 0;
+
+  font-size:
+
+    clamp(
+      52px,
+      8vw,
+      92px
+    );
+
+  /*
+    Было слишком плотно.
+    Теперь между строками
+    немного больше воздуха.
+  */
+
+  line-height:
+    0.98;
+
+  letter-spacing:
+    -4px;
+
+  font-weight:
+    700;
+
+}
+
+
+
+h1 span {
+
+  display: block;
+
+  color:
+    var(--violet-light);
+
+}
+
+
+
+.description {
+
+  max-width:
+    560px;
+
+  margin-top:
+    34px;
+
+  margin-bottom:
+    42px;
+
+  color:
+    #bcbcc5;
+
+  line-height:
+    1.55;
+
+  font-size:
+    15px;
+
+}
+
+
+
+/* =========================
+   STATUS
+========================= */
+
+
+.status-row {
+
+  width: 100%;
+
+  padding:
+    13px 16px;
+
+  border:
+
+    1px solid
+    rgba(141, 92, 255, 0.22);
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  font-family:
+    monospace;
+
+  margin-bottom:
+    34px;
+
+  background:
+
+    rgba(
+      141,
+      92,
+      255,
+      0.035
+    );
+
+}
+
+
+
+.status-label {
+
+  color:
+    var(--dark-grey);
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    2px;
+
+}
+
+
+
+.status {
+
+  color:
+    var(--violet-light);
+
+  letter-spacing:
+    2px;
+
+  font-size:
+    11px;
+
+}
+
+
+
+/* =========================
+   TIMER
+========================= */
+
+
+.timer {
+
+  display: grid;
+
+  grid-template-columns:
+
+    1fr
+    auto
+    1fr
+    auto
+    1fr;
+
+  align-items:
+    center;
+
+  width:
+    100%;
+
+  gap:
+    14px;
+
+}
+
+
+
+.time-block {
+
+  text-align:
+    center;
+
+  min-width:
+    0;
+
+}
+
+
+
+.number {
+
+  display:
+    block;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size:
+
+    clamp(
+      50px,
+      10vw,
+      104px
+    );
+
+  line-height:
+    1;
+
+  letter-spacing:
+    -7px;
+
+  font-variant-numeric:
+    tabular-nums;
+
+}
+
+
+
+.time-block small {
+
+  display:
+    block;
+
+  margin-top:
+    13px;
+
+  font-family:
+    monospace;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    3px;
+
+  color:
+    var(--grey);
+
+}
+
+
+
+.separator {
+
+  color:
+    var(--violet);
+
+  font-family:
+    monospace;
+
+  font-size:
+
+    clamp(
+      40px,
+      7vw,
+      70px
+    );
+
+  margin-bottom:
+    20px;
+
+  animation:
+    blink 1s infinite;
+
+}
+
+
+
+@keyframes blink {
+
+  0%,
+  100% {
+
+    opacity:
+      1;
+
+  }
+
+  50% {
+
+    opacity:
+      0.25;
+
+  }
+
+}
+
+
+
+.deadline {
+
+  margin-top:
+    34px;
+
+  font-family:
+    monospace;
+
+  color:
+    var(--grey);
+
+  letter-spacing:
+    2px;
+
+  font-size:
+    10px;
+
+  text-align:
+    center;
+
+}
+
+
+
+/* =========================
+   BUTTON
+========================= */
+
+
+.access-button {
+
+  width:
+    100%;
+
+  margin-top:
+    42px;
+
+  min-height:
+    68px;
+
+  padding:
+    0 22px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  /*
+    ТЕКСТ ТЕПЕРЬ
+    СТРОГО ПО ЦЕНТРУ
+  */
+
+  justify-content:
+    center;
+
+  position:
+    relative;
+
+  text-decoration:
+    none;
+
+  color:
+    white;
+
+  border:
+
+    1px solid
+    rgba(
+      177,
+      128,
+      255,
+      0.6
+    );
+
+  background:
+
+    linear-gradient(
+      90deg,
+      #5121b8,
+      #7e3cff
+    );
+
+  font-family:
+    monospace;
+
+  font-size:
+    13px;
+
+  letter-spacing:
+    2px;
+
+  transition:
+
+    transform 0.2s ease,
+
+    box-shadow 0.2s ease,
+
+    background 0.2s ease;
+
+}
+
+
+
+.button-text {
+
+  text-align:
+    center;
+
+}
+
+
+
+.arrow {
+
+  position:
+    absolute;
+
+  right:
+    22px;
+
+  top:
+    50%;
+
+  transform:
+    translateY(-50%);
+
+  font-size:
+    23px;
+
+}
+
+
+
+.access-button:hover {
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+
+    0 12px 35px
+    rgba(
+      119,
+      65,
+      255,
+      0.25
+    );
+
+}
+
+
+
+.access-button.closed {
+
+  background:
+    #16161c;
+
+  border-color:
+    #30303a;
+
+  color:
+    #666672;
+
+  pointer-events:
+    none;
+
+}
+
+
+
+/* =========================
+   FOOTER
+========================= */
+
+
+.footer {
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  font-family:
+    monospace;
+
+  color:
+    #50505a;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    2px;
+
+}
+
+
+
+/* =========================
+   HUD CORNERS
+========================= */
+
+
+.corner {
+
+  position:
+    absolute;
+
+  width:
+    28px;
+
+  height:
+    28px;
+
+  pointer-events:
+    none;
+
+}
+
+
+
+.corner-tl {
+
+  top:
+    15px;
+
+  left:
+    15px;
+
+  border-top:
+
+    2px solid
+    var(--violet);
+
+  border-left:
+
+    2px solid
+    var(--violet);
+
+}
+
+
+
+.corner-tr {
+
+  top:
+    15px;
+
+  right:
+    15px;
+
+  border-top:
+
+    2px solid
+    var(--violet);
+
+  border-right:
+
+    2px solid
+    var(--violet);
+
+}
+
+
+
+.corner-bl {
+
+  bottom:
+    15px;
+
+  left:
+    15px;
+
+  border-bottom:
+
+    2px solid
+    var(--violet);
+
+  border-left:
+
+    2px solid
+    var(--violet);
+
+}
+
+
+
+.corner-br {
+
+  bottom:
+    15px;
+
+  right:
+    15px;
+
+  border-bottom:
+
+    2px solid
+    var(--violet);
+
+  border-right:
+
+    2px solid
+    var(--violet);
+
+}
+
+
+
+/* =========================
+   MOBILE
+========================= */
+
+
+@media
+(max-width: 650px) {
+
+
+  body {
+
+    padding:
+      0;
+
+  }
+
+
+
+  .interface {
+
+    width:
+      100%;
+
+    min-height:
+      100vh;
+
+    border:
+      none;
+
+    /*
+      ДОБАВИЛИ ВОЗДУХ
+      МЕЖДУ УГОЛКАМИ
+      И КОНТЕНТОМ
+    */
+
+    padding:
+
+      calc(
+        52px +
+        env(safe-area-inset-top)
+      )
+
+      28px
+
+      calc(
+        54px +
+        env(safe-area-inset-bottom)
+      );
+
+  }
+
+
+
+  .topbar {
+
+    padding:
+      0 6px;
+
+  }
+
+
+
+  .system-state {
+
+    display:
+      none;
+
+  }
+
+
+
+  .hero {
+
+    margin:
+
+      72px auto
+      55px;
+
+  }
+
+
+
+  .eyebrow {
+
+    line-height:
+      1.5;
+
+  }
+
+
+
+  h1 {
+
+    font-size:
+
+      clamp(
+        45px,
+        15vw,
+        70px
+      );
+
+    line-height:
+      0.98;
+
+    letter-spacing:
+      -3px;
+
+  }
+
+
+
+  .description {
+
+    font-size:
+      14px;
+
+    margin-top:
+      32px;
+
+  }
+
+
+
+  .timer {
+
+    gap:
+      5px;
+
+  }
+
+
+
+  .number {
+
+    font-size:
+
+      clamp(
+        43px,
+        15vw,
+        65px
+      );
+
+    letter-spacing:
+      -4px;
+
+  }
+
+
+
+  .separator {
+
+    font-size:
+      38px;
+
+  }
+
+
+
+  .access-button {
+
+    min-height:
+      70px;
+
+    padding:
+      0 55px;
+
+  }
+
+
+
+  .arrow {
+
+    right:
+      20px;
+
+  }
+
+
+
+  .footer {
+
+    flex-direction:
+      column;
+
+    gap:
+      7px;
+
+    /*
+      FOOTER БОЛЬШЕ
+      НЕ ПРИЛИПАЕТ
+      К НИЖНИМ УГЛАМ
+    */
+
+    padding:
+      0 6px;
+
+    margin-top:
+      42px;
+
+  }
+
+
+
+  /*
+    УМЕНЬШАЕМ УГОЛКИ
+    И ОСТАВЛЯЕМ ИХ
+    СНАРУЖИ КОНТЕНТА
+  */
+
+
+  .corner {
+
+    width:
+      22px;
+
+    height:
+      22px;
+
+  }
+
+
+
+  .corner-tl {
+
+    top:
+      14px;
+
+    left:
+      14px;
+
+  }
+
+
+
+  .corner-tr {
+
+    top:
+      14px;
+
+    right:
+      14px;
+
+  }
+
+
+
+  .corner-bl {
+
+    bottom:
+      14px;
+
+    left:
+      14px;
+
+  }
+
+
+
+  .corner-br {
+
+    bottom:
+      14px;
+
+    right:
+      14px;
+
+  }
+
+}
+
+
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+
+@media
+(max-width: 390px) {
+
+
+  .interface {
+
+    padding-left:
+      22px;
+
+    padding-right:
+      22px;
+
+  }
+
+
+  .timer {
+
+    gap:
+      2px;
+
+  }
+
+
+  .time-block small {
+
+    letter-spacing:
+      2px;
+
+  }
+
+
+  .deadline {
+
+    letter-spacing:
+      1.4px;
+
+  }
+
+}
