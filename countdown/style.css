@@ -29,11 +29,14 @@
 }
 
 
+/* =========================
+   RESET
+========================= */
+
 
 * {
   box-sizing: border-box;
 }
-
 
 
 html,
@@ -56,7 +59,6 @@ body {
 }
 
 
-
 body {
 
   min-height: 100vh;
@@ -73,7 +75,6 @@ body {
   position: relative;
 
 }
-
 
 
 /* =========================
@@ -110,7 +111,6 @@ body {
 }
 
 
-
 .noise {
 
   position: fixed;
@@ -141,7 +141,6 @@ body {
 }
 
 
-
 .glow {
 
   position: fixed;
@@ -161,7 +160,6 @@ body {
 }
 
 
-
 .glow-one {
 
   top: -260px;
@@ -173,7 +171,6 @@ body {
 }
 
 
-
 .glow-two {
 
   right: -300px;
@@ -183,7 +180,6 @@ body {
     #5426ff;
 
 }
-
 
 
 /* =========================
@@ -238,9 +234,8 @@ body {
 }
 
 
-
 /* =========================
-   TOP
+   TOPBAR
 ========================= */
 
 
@@ -258,8 +253,11 @@ body {
   font-family:
     monospace;
 
-}
+  position: relative;
 
+  z-index: 3;
+
+}
 
 
 .brand {
@@ -271,7 +269,6 @@ body {
   gap: 12px;
 
 }
-
 
 
 .brand-dot {
@@ -293,7 +290,6 @@ body {
 }
 
 
-
 .brand strong {
 
   display: block;
@@ -305,7 +301,6 @@ body {
     14px;
 
 }
-
 
 
 .brand small {
@@ -325,7 +320,6 @@ body {
     2px;
 
 }
-
 
 
 .system-state {
@@ -348,7 +342,6 @@ body {
 }
 
 
-
 .online-dot {
 
   width: 6px;
@@ -368,7 +361,6 @@ body {
 }
 
 
-
 /* =========================
    HERO
 ========================= */
@@ -384,8 +376,9 @@ body {
   margin:
     80px auto 70px;
 
-}
+  position: relative;
 
+}
 
 
 .eyebrow {
@@ -405,8 +398,122 @@ body {
   margin-bottom:
     25px;
 
+  position: relative;
+
+  z-index: 2;
+
 }
 
+
+/* =========================
+   AURI
+========================= */
+
+
+.auri-wrap {
+
+  position:
+    absolute;
+
+  top:
+    -35px;
+
+  right:
+    -190px;
+
+  width:
+    330px;
+
+  z-index:
+    1;
+
+  pointer-events:
+    none;
+
+  text-align:
+    right;
+
+}
+
+
+.auri-image {
+
+  display:
+    block;
+
+  width:
+    100%;
+
+  height:
+    auto;
+
+  opacity:
+    0.38;
+
+  filter:
+
+    drop-shadow(
+      0 0 18px
+      rgba(138, 82, 255, 0.28)
+    )
+
+    drop-shadow(
+      0 0 45px
+      rgba(138, 82, 255, 0.14)
+    );
+
+  animation:
+    auriFloat 5s ease-in-out infinite;
+
+}
+
+
+.auri-caption {
+
+  margin-top:
+    -8px;
+
+  margin-right:
+    22px;
+
+  font-family:
+    monospace;
+
+  font-size:
+    8px;
+
+  letter-spacing:
+    2px;
+
+  color:
+    rgba(180, 138, 255, 0.55);
+
+}
+
+
+@keyframes auriFloat {
+
+  0%,
+  100% {
+
+    transform:
+      translateY(0);
+
+  }
+
+  50% {
+
+    transform:
+      translateY(-8px);
+
+  }
+
+}
+
+
+/* =========================
+   BIG TITLE
+========================= */
 
 
 h1 {
@@ -421,12 +528,6 @@ h1 {
       92px
     );
 
-  /*
-    Было слишком плотно.
-    Теперь между строками
-    немного больше воздуха.
-  */
-
   line-height:
     0.98;
 
@@ -436,8 +537,13 @@ h1 {
   font-weight:
     700;
 
-}
+  position:
+    relative;
 
+  z-index:
+    2;
+
+}
 
 
 h1 span {
@@ -448,7 +554,6 @@ h1 span {
     var(--violet-light);
 
 }
-
 
 
 .description {
@@ -471,8 +576,13 @@ h1 span {
   font-size:
     15px;
 
-}
+  position:
+    relative;
 
+  z-index:
+    2;
+
+}
 
 
 /* =========================
@@ -515,8 +625,13 @@ h1 span {
       0.035
     );
 
-}
+  position:
+    relative;
 
+  z-index:
+    2;
+
+}
 
 
 .status-label {
@@ -533,7 +648,6 @@ h1 span {
 }
 
 
-
 .status {
 
   color:
@@ -546,7 +660,6 @@ h1 span {
     11px;
 
 }
-
 
 
 /* =========================
@@ -575,8 +688,13 @@ h1 span {
   gap:
     14px;
 
-}
+  position:
+    relative;
 
+  z-index:
+    2;
+
+}
 
 
 .time-block {
@@ -588,7 +706,6 @@ h1 span {
     0;
 
 }
-
 
 
 .number {
@@ -620,7 +737,6 @@ h1 span {
 }
 
 
-
 .time-block small {
 
   display:
@@ -642,7 +758,6 @@ h1 span {
     var(--grey);
 
 }
-
 
 
 .separator {
@@ -670,26 +785,20 @@ h1 span {
 }
 
 
-
 @keyframes blink {
 
   0%,
   100% {
-
     opacity:
       1;
-
   }
 
   50% {
-
     opacity:
       0.25;
-
   }
 
 }
-
 
 
 .deadline {
@@ -712,8 +821,13 @@ h1 span {
   text-align:
     center;
 
-}
+  position:
+    relative;
 
+  z-index:
+    2;
+
+}
 
 
 /* =========================
@@ -733,18 +847,13 @@ h1 span {
     68px;
 
   padding:
-    0 22px;
+    0 55px;
 
   display:
     flex;
 
   align-items:
     center;
-
-  /*
-    ТЕКСТ ТЕПЕРЬ
-    СТРОГО ПО ЦЕНТРУ
-  */
 
   justify-content:
     center;
@@ -793,8 +902,10 @@ h1 span {
 
     background 0.2s ease;
 
-}
+  z-index:
+    2;
 
+}
 
 
 .button-text {
@@ -803,7 +914,6 @@ h1 span {
     center;
 
 }
-
 
 
 .arrow {
@@ -826,7 +936,6 @@ h1 span {
 }
 
 
-
 .access-button:hover {
 
   transform:
@@ -845,7 +954,6 @@ h1 span {
 }
 
 
-
 .access-button.closed {
 
   background:
@@ -861,7 +969,6 @@ h1 span {
     none;
 
 }
-
 
 
 /* =========================
@@ -892,8 +999,13 @@ h1 span {
   letter-spacing:
     2px;
 
-}
+  position:
+    relative;
 
+  z-index:
+    3;
+
+}
 
 
 /* =========================
@@ -918,7 +1030,6 @@ h1 span {
 }
 
 
-
 .corner-tl {
 
   top:
@@ -938,7 +1049,6 @@ h1 span {
     var(--violet);
 
 }
-
 
 
 .corner-tr {
@@ -962,7 +1072,6 @@ h1 span {
 }
 
 
-
 .corner-bl {
 
   bottom:
@@ -982,7 +1091,6 @@ h1 span {
     var(--violet);
 
 }
-
 
 
 .corner-br {
@@ -1006,7 +1114,6 @@ h1 span {
 }
 
 
-
 /* =========================
    MOBILE
 ========================= */
@@ -1024,7 +1131,6 @@ h1 span {
   }
 
 
-
   .interface {
 
     width:
@@ -1035,12 +1141,6 @@ h1 span {
 
     border:
       none;
-
-    /*
-      ДОБАВИЛИ ВОЗДУХ
-      МЕЖДУ УГОЛКАМИ
-      И КОНТЕНТОМ
-    */
 
     padding:
 
@@ -1059,7 +1159,6 @@ h1 span {
   }
 
 
-
   .topbar {
 
     padding:
@@ -1068,14 +1167,12 @@ h1 span {
   }
 
 
-
   .system-state {
 
     display:
       none;
 
   }
-
 
 
   .hero {
@@ -1088,14 +1185,12 @@ h1 span {
   }
 
 
-
   .eyebrow {
 
     line-height:
       1.5;
 
   }
-
 
 
   h1 {
@@ -1117,7 +1212,6 @@ h1 span {
   }
 
 
-
   .description {
 
     font-size:
@@ -1129,6 +1223,35 @@ h1 span {
   }
 
 
+  .auri-wrap {
+
+    top:
+      60px;
+
+    right:
+      -85px;
+
+    width:
+      205px;
+
+  }
+
+
+  .auri-image {
+
+    opacity:
+      0.18;
+
+  }
+
+
+  .auri-caption {
+
+    display:
+      none;
+
+  }
+
 
   .timer {
 
@@ -1136,7 +1259,6 @@ h1 span {
       5px;
 
   }
-
 
 
   .number {
@@ -1155,14 +1277,12 @@ h1 span {
   }
 
 
-
   .separator {
 
     font-size:
       38px;
 
   }
-
 
 
   .access-button {
@@ -1176,14 +1296,12 @@ h1 span {
   }
 
 
-
   .arrow {
 
     right:
       20px;
 
   }
-
 
 
   .footer {
@@ -1194,12 +1312,6 @@ h1 span {
     gap:
       7px;
 
-    /*
-      FOOTER БОЛЬШЕ
-      НЕ ПРИЛИПАЕТ
-      К НИЖНИМ УГЛАМ
-    */
-
     padding:
       0 6px;
 
@@ -1207,14 +1319,6 @@ h1 span {
       42px;
 
   }
-
-
-
-  /*
-    УМЕНЬШАЕМ УГОЛКИ
-    И ОСТАВЛЯЕМ ИХ
-    СНАРУЖИ КОНТЕНТА
-  */
 
 
   .corner {
@@ -1228,7 +1332,6 @@ h1 span {
   }
 
 
-
   .corner-tl {
 
     top:
@@ -1238,7 +1341,6 @@ h1 span {
       14px;
 
   }
-
 
 
   .corner-tr {
@@ -1252,7 +1354,6 @@ h1 span {
   }
 
 
-
   .corner-bl {
 
     bottom:
@@ -1262,7 +1363,6 @@ h1 span {
       14px;
 
   }
-
 
 
   .corner-br {
@@ -1276,7 +1376,6 @@ h1 span {
   }
 
 }
-
 
 
 /* =========================
