@@ -1,1 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
 
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  >
+
+  <meta
+    name="theme-color"
+    content="#08080c"
+  >
+
+  <title>AURA // FINAL ACCESS</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+  <div class="noise"></div>
+  <div class="grid"></div>
+
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+
+  <main class="interface">
+
+
+    <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
+
+    <header class="topbar">
+
+      <div class="brand">
+
+        <span class="brand-dot"></span>
+
+        <div>
+          <strong>AURA</strong>
+          <small>SYSTEM // 2026</small>
+        </div>
+
+      </div>
+
+
+      <div class="system-state">
+
+        <span class="online-dot"></span>
+
+        SYSTEM ONLINE
+
+      </div>
+
+    </header>
+
+
+
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+
+    <section class="hero">
+
+
+      <div class="eyebrow">
+        SYSTEM NOTICE // FINAL ACCESS WINDOW
+      </div>
+
+
+      <h1>
+        ДО<br>
+        ЗАКРЫТИЯ
+        <span>ДОСТУПА</span>
+      </h1>
+
+
+      <p class="description">
+
+        Регистрация на форум AURA скоро будет завершена.
+        После окончания отсчёта доступ к форме будет закрыт.
+
+      </p>
+
+
+
+      <!-- СТАТУС -->
+
+      <div class="status-row">
+
+        <span class="status-label">
+          CURRENT STATUS
+        </span>
+
+        <span
+          class="status"
+          id="status"
+        >
+          ACTIVE
+        </span>
+
+      </div>
+
+
+
+      <!-- ТАЙМЕР -->
+
+      <div class="timer">
+
+
+        <div class="time-block">
+
+          <span
+            class="number"
+            id="hours"
+          >
+            00
+          </span>
+
+          <small>
+            ЧАСОВ
+          </small>
+
+        </div>
+
+
+
+        <span class="separator">
+          :
+        </span>
+
+
+
+        <div class="time-block">
+
+          <span
+            class="number"
+            id="minutes"
+          >
+            00
+          </span>
+
+          <small>
+            МИНУТ
+          </small>
+
+        </div>
+
+
+
+        <span class="separator">
+          :
+        </span>
+
+
+
+        <div class="time-block">
+
+          <span
+            class="number"
+            id="seconds"
+          >
+            00
+          </span>
+
+          <small>
+            СЕКУНД
+          </small>
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="deadline">
+
+        DEADLINE // 05.10.2026 // 23:59 MSK
+
+      </div>
+
+
+
+      <!-- КНОПКА РЕГИСТРАЦИИ -->
+
+      <a
+        href="https://forms.yandex.ru/cloud/6aa4274e90fa7b6d13660f66"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="access-button"
+        id="registrationButton"
+      >
+
+        <span class="button-text">
+          ПОДАТЬ ЗАЯВКУ
+        </span>
+
+        <span class="arrow">
+          ↗
+        </span>
+
+      </a>
+
+
+    </section>
+
+
+
+    <!-- НИЖНЯЯ ПАНЕЛЬ -->
+
+    <footer class="footer">
+
+      <span>
+        AURA // REGISTRATION NODE
+      </span>
+
+      <span>
+        CONNECTION // STABLE
+      </span>
+
+    </footer>
+
+
+
+    <!-- HUD УГОЛКИ -->
+
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+
+  </main>
+
+
+  <script src="countdown.js"></script>
+
+</body>
+
+</html>
